@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="homepage">
+    <div class="greeting">
+        <h1>Ask AI</h1>
+        <p>Ask your questions and get responses from AI</p>
+    </div>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+
+    </form>
+
+</div>
+{% endblock %}
