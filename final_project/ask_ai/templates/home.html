@@ -16,9 +16,10 @@
         <p>Ask your digital genie.</p>
     </div>
 
-    <div class="response">
-        {{ response_text }}
+    <div class="response-container">
+        <div class="response">{{response_text}}</div>
     </div>
+
 
     <form method="POST" action="">
         {% csrf_token %}
@@ -28,8 +29,11 @@
                   rows="5" cols="100"
                   placeholder="Ask something. . ."
                   required></textarea>
-        <button type="submit">SUBMIT</button>
-        <button type="submit">CLEAR</button>
+        <div class="btn">
+            <button type="submit">SUBMIT</button>
+            <button type="submit">CLEAR</button>
+        </div>
+
     </form>
 
 </div>

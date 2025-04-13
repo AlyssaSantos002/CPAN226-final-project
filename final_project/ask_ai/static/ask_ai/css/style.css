@@ -38,11 +38,21 @@ form button{
     color: #4E4D4D;
     font-weight: 600;
     padding: 10px 10px;
-    margin-top: 20px;
+    margin: 20px;
     border-radius: 10px;
     border: none;
 }
 
+form button:hover{
+    background-color: #4E4D4D;
+    color: white;
+    outline: 1px solid white;
+}
+
+form .btn{
+    display: flex;
+    flex-display: row;
+}
 form textarea{
     padding: 15px 15px;
     font-size: 15px;
@@ -50,11 +60,19 @@ form textarea{
 }
 
 
-.response{
-    color: white;
-    font-weight: 200;
-    text-align: centre;
-    max-height: 300px;
-    max-width: 850px;
-    overflow-y: auto;
+
+.response-container {
+  height: 250px;
+  width: 840px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+.response {
+  padding: 10px;
+  color: white;
+  font-weight: 200;
+  line-height: 1.5;
 }
