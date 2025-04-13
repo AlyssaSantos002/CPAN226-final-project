@@ -6,16 +6,21 @@ from dotenv import load_dotenv
 # #To load from .env
 load_dotenv()
 
-#API Key
+# API Key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-#function
+
+# function
 def ask_ai(request):
     response_text = ""
 
     if request.method == "POST":
         prompt = request.POST.get("prompt")
-        if prompt:
+        if not prompt:
+            response_text = "Please enter a question."
+        elif len(prompt) > 1000:
+            response_text = "Your question is too long. Try to shorten it."
+        else:
             try:
                 response = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
@@ -32,7 +37,4 @@ def ask_ai(request):
                 response_text = f"Error: {e}"
                 print(f"\n Error: {e}")
 
-
-        return render(request, "home.html", {"response_text": response_text})
-
-
+    return render(request, "home.html", {"response_text": response_text})
