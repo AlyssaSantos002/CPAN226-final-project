@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{% static 'ask_ai/css/style.css' %}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 <div class="homepage">
@@ -17,6 +18,7 @@
     </div>
 
     <div class="response-container">
+        <div class="question">{{question}}</div>
         <div class="response">{{response_text}}</div>
     </div>
 
@@ -33,7 +35,6 @@
             <button type="submit">SUBMIT</button>
             <button type="submit">CLEAR</button>
         </div>
-
     </form>
 
 </div>
