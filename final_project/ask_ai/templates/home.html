@@ -1,16 +1,37 @@
-{% extends 'layout.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASK AI</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ask_ai/css/style.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
 <div class="homepage">
     <div class="greeting">
         <h1>Ask AI</h1>
-        <p>Ask your questions and get responses from AI</p>
+        <p>Ask your digital genie.</p>
+    </div>
+
+    <div class="response">
+        {% response_text %}
     </div>
 
     <form method="POST" action="">
         {% csrf_token %}
-
-
+        <textarea name="prompt"
+                  id="prompt"
+                  wrap="soft"
+                  rows="5" cols="100"
+                  placeholder="Ask something. . ."
+                  required></textarea>
+        <button type="submit">SUBMIT</button>
     </form>
 
 </div>
-{% endblock %}
+
+</body>
+</html>
