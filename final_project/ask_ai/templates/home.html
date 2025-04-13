@@ -18,8 +18,20 @@
     </div>
 
     <div class="response-container">
-        <div class="question">{{question}}</div>
-        <div class="response">{{response_text}}</div>
+        {% if question %}
+            <p class="question">{{question}}</p>
+        {% endif %}
+
+        {% if response_text %}
+            <div class="response">
+                <pre>{{response_text}}</pre>
+            </div>
+        {% else%}
+            <div class="response">
+                <p>Please enter a question.</p>
+            </div>
+        {% endif %}
+
     </div>
 
 
@@ -28,9 +40,9 @@
         <textarea name="prompt"
                   id="prompt"
                   wrap="soft"
-                  rows="5" cols="100"
+                  rows="4" cols="100"
                   placeholder="Ask something. . ."
-                  required></textarea>
+                  ></textarea>
         <div class="btn">
             <button type="submit">SUBMIT</button>
             <button type="submit">CLEAR</button>
