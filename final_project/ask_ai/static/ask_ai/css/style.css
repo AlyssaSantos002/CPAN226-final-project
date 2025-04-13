@@ -1,5 +1,60 @@
-.content{
+body{
+    margin: 0 0;
+    font-family: "Inter", sans-serif;
+}
+
+.homepage{
     display: flex;
-    justify-content: centre;
-    align-item: centre;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#6390F0, #39538A, #111A2C);
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+.greeting{
+    text-align: center;
+    color: white;
+}
+.greeting h1{
+    margin: 0 0;
+    font-size: 90px;
+}
+.greeting p{
+    font-size: 25px;
+    margin: 5px 0;
+    font-style: italic;
+    font-weight: 100;
+}
+
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+form button{
+    color: #4E4D4D;
+    font-weight: 600;
+    padding: 10px 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+form textarea{
+    padding: 15px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+
+.response{
+    color: white;
+    font-weight: 200;
+    text-align: centre;
+    max-height: 300px;
+    max-width: 850px;
+    overflow-y: auto;
 }
