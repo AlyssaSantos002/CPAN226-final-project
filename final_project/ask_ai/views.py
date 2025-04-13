@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import openai
 import os
 from dotenv import load_dotenv
@@ -20,7 +20,7 @@ def ask_ai(request):
         if "clear" in request.POST:
             return render(request, "home.html", {"response_text": "", "question":""})
 
-        prompt = request.POST.get("prompt", "")
+        prompt = request.POST.get("prompt", "").strip()
         question = prompt
 
         if not prompt:
