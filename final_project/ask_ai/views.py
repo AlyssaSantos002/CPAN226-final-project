@@ -13,9 +13,16 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # function
 def ask_ai(request):
     response_text = ""
+    question = ""
+
 
     if request.method == "POST":
-        prompt = request.POST.get("prompt")
+        if "clear" in request.POST:
+            return render(request, "home.html", {"response_text": "", "question":""})
+
+        prompt = request.POST.get("prompt", "")
+        question = prompt
+
         if not prompt:
             response_text = "Please enter a question."
         elif len(prompt) > 1000:
@@ -35,6 +42,5 @@ def ask_ai(request):
 
             except Exception as e:
                 response_text = f"Error: {e}"
-                print(f"\n Error: {e}")
 
-    return render(request, "home.html", {"response_text": response_text})
+    return render(request, "home.html", {"response_text": response_text, "question":question})
